@@ -4,9 +4,9 @@
   "description": "Minimal backend for full stack project",
   "main": "index.js",
   "scripts": {
-    
     "dev": "node backend/index.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "postinstall": "npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node backend/index.js"
   },
   "author": "",

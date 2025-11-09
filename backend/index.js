@@ -55,6 +55,7 @@ const _dirname = path.resolve();
   // Serve frontend build if it exists (so backend can serve the whole app)
   const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'build');
   if (fs.existsSync(frontendBuildPath)) {
+    console.log('Serving frontend build from:', frontendBuildPath);
     app.use(express.static(frontendBuildPath));
     app.get('*', (req, res) => {
       res.sendFile(path.join(frontendBuildPath, 'index.html'));
