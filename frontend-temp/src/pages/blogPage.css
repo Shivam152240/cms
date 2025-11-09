@@ -1,0 +1,237 @@
+
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.blog-page {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #626ded 0%, #ffffff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 40px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.headline{
+    color: #fdfcfc;
+}
+
+/* Outer container */
+.blog-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 40px;
+  animation: fadeIn 0.8s ease-in-out;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+
+/* Main white box */
+.blog-container {
+  width: 100%;
+  max-width: 950px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease-in-out;
+   
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading */
+.blog-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+
+}
+
+
+.blog-header h1 {
+  font-size: 30px;
+  margin: 0;
+  color: #3d2673;
+  font-weight: 700;
+  animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-header .icon {
+  font-size: 26px;
+}
+
+/* Sub-heading */
+.blog-subheading {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 16px 0 10px 0;
+  color: #2b1a82;
+}
+
+/* Input card */
+.blog-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.blog-inputs input[type="text"] {
+  flex: 1 1 250px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d7d3eb;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.blog-inputs input[type="text"]:focus {
+  border-color: #7755ff;
+  box-shadow: 0 0 0 3px rgba(119, 85, 255, 0.15);
+}
+
+.blog-inputs button {
+  background: #6b4bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.blog-inputs button:hover {
+  background: #593ce0;
+}
+
+/* Blog list container */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Single blog card */
+.blog-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  margin-top: 2rem;
+  /* make card fit its container and respect padding so right margin appears */
+  width: 100%;
+  max-width: 970px;
+  box-sizing: border-box;
+  display: flex;
+  margin-right: 20px;
+  
+  flex-direction: column;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3b2b80;
+}
+
+.blog-card p {
+  margin: 0;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Delete button */
+.delete-btn {
+  margin-top: 12px;
+  background: #fdfdfd;
+  color: rgb(6, 6, 6);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-end;
+  width: fit-content;
+}
+
+.delete-btn:hover {
+  background: #e60000;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Empty state */
+.blog-empty {
+  text-align: center;
+  padding: 30px;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-container {
+    padding: 22px;
+  }
+
+  .blog-header h1 {
+    font-size: 26px;
+  }
+
+  .blog-inputs input[type="text"] {
+    flex-basis: 100%;
+  }
+}
+.blog-card .meta {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
