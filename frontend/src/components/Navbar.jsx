@@ -31,7 +31,6 @@ export default function Navbar({ modules = [] }) {
       </div>
 
       {/* Mobile Hamburger Button */}
-    
       <div className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </div>
