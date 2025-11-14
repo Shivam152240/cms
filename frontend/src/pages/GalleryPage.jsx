@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './galleryPage.css';
-
+const API = "https://cms-xjfn.onrender.com/api"; 
 const GalleryManager = () => {
   const [images, setImages] = useState([]);
   const [file, setFile] = useState(null);
@@ -9,7 +9,7 @@ const GalleryManager = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/gallery");
+      const res = await fetch(`${API}/gallery`);
       const data = await res.json();
       setImages(data);
     } catch (err) {
@@ -36,7 +36,7 @@ const GalleryManager = () => {
     formData.append("userId", user._id)
 
     try {
-      const res = await fetch("http://localhost:5000/api/gallery", {
+      const res = await fetch(`${API}/gallery`, {
         method: "POST",
         body: formData,
       });
@@ -59,7 +59,7 @@ const GalleryManager = () => {
     console.log('Token:', token);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/gallery/${id}`, {
+      const res = await fetch(`${API}/gallery/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`
@@ -93,7 +93,7 @@ const GalleryManager = () => {
         {images.map((img) => (
           <div key={img._id} className="gallery-card">
             <img
-              src={`http://localhost:5000${encodeURI(img.url)}`}
+              src={`https://cms-xjfn.onrender.com${encodeURI(img.url)}`}
               alt={img.title || 'Gallery'}
               className="gallery-image"
               onError={(e) => {

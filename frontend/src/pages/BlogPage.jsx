@@ -3,6 +3,7 @@ import './blogPage.css';
 
 
 
+const API = "https://cms-xjfn.onrender.com/api";   
 const BlogManager = () => {
   const [blogs, setBlogs] = useState([]);
   const [title, setTitle] = useState("");
@@ -12,7 +13,7 @@ const BlogManager = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/blogs");
+      const res = await fetch(`${API}/blogs`);
       const data = await res.json();
       setBlogs(data);
     } catch (err) {
@@ -30,7 +31,7 @@ const BlogManager = () => {
     }
     if (!title || !content) return alert("Title and content required");
     try {
-      const res = await fetch("http://localhost:5000/api/blogs", {
+      const res = await fetch(`${API}/blogs`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -54,7 +55,7 @@ const BlogManager = () => {
 
   const deleteBlog = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+      const res = await fetch(`${API}/blogs/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`

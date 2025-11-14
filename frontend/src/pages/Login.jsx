@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './login.css';
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://cms-xjfn.onrender.com/api/auth";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });

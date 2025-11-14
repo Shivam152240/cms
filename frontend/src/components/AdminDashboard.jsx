@@ -18,8 +18,8 @@ export default function AdminDashboard() {
   const fetchUserDetails = async (userId) => {
     setSelectedUser(userId);
     const [blogsRes, galleryRes] = await Promise.all([
-      fetch(`http://localhost:5000/api/admin/users/${userId}/blogs`),
-      fetch(`http://localhost:5000/api/admin/users/${userId}/gallery`),
+      fetch(`https://cms-xjfn.onrender.com/api/admin/users/${userId}/blogs`),
+      fetch(`https://cms-xjfn.onrender.com/api/admin/users/${userId}/gallery`),
       
     ]);
     setBlogs(await blogsRes.json());
@@ -28,12 +28,12 @@ export default function AdminDashboard() {
 
   // Delete functions
   const deleteBlog = async (id) => {
-    await fetch(`http://localhost:5000/api/admin/blogs/${id}`, { method: "DELETE" });
+    await fetch(`https://cms-xjfn.onrender.com/api/admin/blogs/${id}`, { method: "DELETE" });
     setBlogs(blogs.filter((b) => b._id !== id));
   };
 
   const deleteImage = async (id) => {
-    await fetch(`http://localhost:5000/api/admin/gallery/${id}`, { method: "DELETE" });
+    await fetch(`https://cms-xjfn.onrender.com/api/admin/gallery/${id}`, { method: "DELETE" });
     setGallery(gallery.filter((g) => g._id !== id));
   };
 
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
                 {gallery.length ? (
                   gallery.map((img) => (
                     <div className="gallery-item" key={img._id}>
-                      <img src={`http://localhost:5000${img.url}`} alt="" />
+                      <img src={`https://cms-xjfn.onrender.com${img.url}`} alt="" />
                       <button onClick={() => deleteImage(img._id)}>Delete</button>
                     </div>
                   ))

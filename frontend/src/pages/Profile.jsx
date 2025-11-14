@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./profile.css";
 
-const API = "http://localhost:5000/api/auth/profile";
+const API = "https://cms-xjfn.onrender.com/api/auth/profile";
 
 export default function Profile() {
   const [user, setUser] = useState(null);

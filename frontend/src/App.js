@@ -14,7 +14,7 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 
 
-const API = 'http://localhost:5000/api';
+const API = 'https://cms-xjfn.onrender.com/api';
 
 function App(){
   const [modules, setModules] = useState([]);

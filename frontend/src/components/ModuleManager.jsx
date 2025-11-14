@@ -4,7 +4,7 @@ const ModuleManager = () => {
   const [modules, setModules] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/modules")
+    fetch("https://cms-xjfn.onrender.com/api/modules")
       .then((res) => res.json())
       .then((data) => setModules(data))
       .catch((err) => console.error(err));
@@ -12,7 +12,7 @@ const ModuleManager = () => {
 
   const toggleModule = async (id, status) => {
     try {
-      await fetch(`http://localhost:5000/api/modules/${id}`, {
+      await fetch(`https://cms-xjfn.onrender.com/api/modules/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ active: !status }),

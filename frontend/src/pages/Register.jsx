@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './register.css';
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://cms-xjfn.onrender.com/api/auth";
 
 export default function Register() {
   const [form, setForm] = useState({
