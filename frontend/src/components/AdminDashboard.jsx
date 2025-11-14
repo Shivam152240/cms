@@ -9,7 +9,7 @@ export default function AdminDashboard() {
 
   // Fetch all users
   const fetchUsers = async () => {
-    const res = await fetch("http://localhost:5000/api/admin/users");
+    const res = await fetch("https://cms-xjfn.onrender.com/api/admin/users");
     const data = await res.json();
     setUsers(data);
   };
