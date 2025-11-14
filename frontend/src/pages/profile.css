@@ -1,0 +1,44 @@
+*{
+  background-color:  linear-gradient(135deg, #626ded 0%, #ffffff 100%);
+}
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:  linear-gradient(135deg, #626ded 0%, #ffffff 100%);
+}
+
+.profile-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 50rem;
+  /* max-width: 400px; */
+  box-sizing: border-box;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-box h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-box p {
+  color: #555;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.profile-box .error {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,126 @@
+.admin-container {
+  padding: 40px;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-container h1 {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.dashboard-layout {
+  display: flex;
+  gap: 30px;
+}
+
+.users-section {
+  width: 280px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.users-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.users-section li {
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.users-section li:hover,
+.users-section li.active {
+  background: #4f46e5;
+  color: white;
+}
+
+.email {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.details-section {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blogs-list
+ {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding-right: 20px;
+}
+.gallery-list{
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ 
+
+}
+
+.blog-card
+ {
+  background: #f9fafb;
+  border-radius: 8px;
+  width: 100%;
+  
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+.gallery-item{
+  background: #f9fafb;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 190px;
+  
+  
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.blog-card button,
+.gallery-item button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  max-width: 200px;
+  height: 130px;
+  border-radius: 6px;
+  object-fit: cover;
+}
