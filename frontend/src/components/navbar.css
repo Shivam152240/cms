@@ -1,16 +1,86 @@
-.navbar{
+.navbar {
     background-color: rgb(118, 10, 249);
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
     left: 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.buttons{
+
+.buttons {
     color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    margin-left: 15px;
+    margin: 10px;
+}
+.register{
+    margin-right: 50px;
+}
+.logout-btn{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+/* Hamburger Button - Mobile Only */
+.mobile-menu-btn {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+/* Desktop Navigation */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgb(118, 10, 249);
+        width: 100%;
+        padding: 10px 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .buttons {
+        margin: 12px 0;
+        display: block;
+    }
+
+    .logout-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 }

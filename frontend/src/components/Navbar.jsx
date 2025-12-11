@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './navbar.css';
+import "./navbar.css";
+
 export default function Navbar({ modules = [] }) {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // ✅ Safe parse (string ya boolean dono handle karega)
   const isAdmin =
     localStorage.getItem("isAdmin") === "true" ||
     localStorage.getItem("isAdmin") === true;
@@ -22,45 +23,41 @@ export default function Navbar({ modules = [] }) {
   };
 
   return (
-    <nav className="navbar " style={{ padding: 15, borderBottom: "1px solid #ddd" }}>
-      <Link className="buttons" to="/" style={{ marginRight: 12 }}>Home</Link>
+    <nav className="navbar">
+      <div className="nav-left">
+        <Link className="buttons" to="/">
+          Home
+        </Link>
+      </div>
 
-      {names.includes("blog") && (
-        <Link className="buttons"to="/blog" style={{ marginRight: 12 }}>Blog</Link>
-      )}
-      {names.includes("gallery") && (
-        <Link className="buttons" to="/gallery" style={{ marginRight: 12 }}>Gallery</Link>
-      )}
-      {names.includes("contact") && (
-        <Link className="buttons"to="/contact" style={{ marginRight: 12 }}>Contact</Link>
-      )}
+      {/* Mobile Hamburger Button */}
+      <div className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
 
-      {/* Auth buttons */}
-      <div style={{ float: "right" }}>
+      {/* LINKS */}
+      <div className={menuOpen ? "nav-links open" : "nav-links"}>
+        {names.includes("blog") && <Link className="buttons" to="/blog">Blog</Link>}
+        {names.includes("gallery") && <Link className="buttons" to="/gallery">Gallery</Link>}
+        {names.includes("contact") && <Link className="buttons" to="/contact">Contact</Link>}
+
         {!token ? (
           <>
-            <Link className="buttons"to="/login" style={{ marginRight: 12 }}>Login</Link>
-            <Link className="buttons"to="/register" style={{ marginRight: 52 }}>Register</Link>
+            <Link className="buttons login" to="/login">Login</Link>
+            <Link className="buttons register" to="/register">Register</Link>
           </>
         ) : (
           <>
-            {/* ✅ Admin dashboard only if isAdmin true */}
             {isAdmin && (
-              <Link className="buttons"to="/admin" style={{ marginRight: 12 }}>
+              <Link className="buttons" to="/admin">
                 Admin Dashboard
               </Link>
             )}
-            <Link className="buttons"to="/profile" style={{ marginRight: 12 }}>Profile</Link>
-            <button className="buttons "
-              onClick={handleLogout}
-              style={{
-                background: "transparent",
-                marginRight:50,
-                border: "none",
-                cursor: "pointer",
-                color: "white",
+            <Link className="buttons" to="/profile">Profile</Link>
 
-              }}
+            <button
+              className="buttons logout-btn"
+              onClick={handleLogout}
             >
               Logout
             </button>

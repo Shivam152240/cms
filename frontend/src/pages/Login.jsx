@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import './login.css';
+
 
 const API = "https://cms-xjfn.onrender.com/api/auth";
 
@@ -55,7 +56,9 @@ export default function Login() {
           required
         />
         <br /><br />
+        <p className="p">Forgat Password?</p>
         <button type="submit">Login</button>
+        <p className="p">Don't have an account?<Link to="/register"> Register</Link></p>
       </form>
       {message && <p className="login-message">{message}</p>}
       </div>

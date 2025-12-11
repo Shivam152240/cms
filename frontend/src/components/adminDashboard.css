@@ -3,12 +3,14 @@
   background: #f8fafc;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  margin-top: 30px;
 }
 
 .admin-container h1 {
   font-size: 2rem;
   color: #4f46e5;
   margin-bottom: 10px;
+
 }
 
 .subtitle {

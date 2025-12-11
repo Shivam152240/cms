@@ -19,9 +19,13 @@
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     width: 100%;
- margin-top: 50px;
+ margin-top: 70px;
   text-align: center;
   animation: slideUp 0.4s ease-in-out;
+}
+.p{
+  font-weight: 50;
+  font-size: small;
 }
 
 @keyframes slideUp {
@@ -71,10 +75,7 @@
   margin-top: 10px;
 }
 
-.register-box input[type="checkbox"] {
-  margin-right: 8px;
-  accent-color: #7c3aed; /* Purple tick */
-}
+
 
 /* Button */
 .register-box button {
@@ -108,4 +109,33 @@
   .register-box {
     padding: 2rem 1.5rem;
   }
+.register-box input[type="text"],
+.register-box input[type="email"],
+.register-box input[type="password"] {
+ width: 250px;
+  padding: 10px 14px;
+  margin: 5px 0 0 ;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+  
+}
+.register-box button {
+  width: 250px;
+  padding: 10px 0;
+  margin-top: 10px;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+.register-box{
+    width: 280px;
+}
 }

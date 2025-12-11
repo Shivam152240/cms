@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './register.css';
+import { Link } from "react-router-dom";
 
 const API = "https://cms-xjfn.onrender.com/api/auth";
 
@@ -10,7 +11,7 @@ export default function Register() {
     name: "",
     email: "",
     password: "",
-    isAdmin: false, // 👈 added field
+    isAdmin: false, // 👈 default false
   });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -68,19 +69,10 @@ export default function Register() {
         />
         <br /><br />
 
-        {/* 👇 Admin checkbox */}
-        <label>
-          <input
-            type="checkbox"
-            name="isAdmin"
-            checked={form.isAdmin}
-            onChange={handleChange}
-          />{" "}
-          Make me admin
-        </label>
-        <br /><br />
+        {/* Admin checkbox hidden - always false */}
 
         <button type="submit">Register</button>
+       <p className="p">already have an account?<Link to="/login"> Sign in</Link>  </p>
       </form>
 
       {message && <p className="register-message">{message}</p>}
