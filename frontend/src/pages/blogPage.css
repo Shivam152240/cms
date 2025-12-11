@@ -229,6 +229,12 @@ body, html, #root {
   .blog-inputs input[type="text"] {
     flex-basis: 100%;
   }
+   .blog-container {
+  width: 100%;
+  max-width: 280px;
+
+   
+}
 }
 .blog-card .meta {
   font-size: 14px;
